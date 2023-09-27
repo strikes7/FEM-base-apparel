@@ -2,8 +2,12 @@
 
 .web-logo {
   block-size: fit-content;
-  margin-block: toRem(62) toRem(32);
+  margin-block: toRem(52) toRem(22);
   margin-inline-start: clamp(3.5rem, 20vw, toRem(168));
+  &__image {
+    height: 2rem;
+    display: block;
+  }
 }
 
 .hero {
