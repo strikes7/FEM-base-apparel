@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon-32x32.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/style-desktop.css"
+      media="(min-width:60em)"
+    />
+    <title>Base Apparel Coming Soon</title>
+  </head>
+  <body>
+    <main class="hero">
+      <a href="#" class="web-logo">
+        <img
+          src="assets/images/logo.svg"
+          alt="web logo"
+          class="web-logo__image"
+        />
+      </a>
+      <picture class="wrapper-hero-image">
+        <source
+          srcset="assets/images/hero-desktop.jpg"
+          media="(min-width: 60em)"
+        />
+        <img
+          src="assets/images/hero-mobile.jpg"
+          alt="hero logo"
+          class="hero__image"
+        />
+      </picture>
+      <h1 class="hero__title"><span class="thin">WE'RE</span>COMING SOON</h1>
+      <p class="hero__text">
+        Hello fellow shoppers! We're currently building our new fashion
+        store.Add your email below to stay up-to-date with announcements and our
+        launch deals.
+      </p>
+
+      <form action="" id="newsletter-form" class="newsletter">
+        <input
+          class="newsletter__email"
+          type="email"
+          name="newsletter-email"
+          id="newsletter-email"
+          value=""
+          placeholder="Email Address"
+        />
+        <button
+          id="newsletter-send"
+          class="newsletter__button-send"
+          type="send"
+        >
+          <img
+            src="assets/images/icon-arrow.svg"
+            alt="subscribe to newsletter"
+          />
+        </button>
+        <p class="newsletter__error-message">Please select a valid email</p>
+      </form>
+    </main>
+  </body>
+  <script src="assets/js/script.js" async></script>
+</html>

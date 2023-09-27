@@ -1,0 +1,16 @@
+@use "../abstract/" as *;
+
+.web-logo {
+  grid-area: logo;
+  inline-size: fit-content;
+  margin-inline-start: 2rem;
+  margin-block: 2rem;
+
+  &__image {
+    height: 1.25rem;
+    display: block;
+  }
+
+  outline-offset: 10px;
+  outline-color: $clr-primary-100;
+}

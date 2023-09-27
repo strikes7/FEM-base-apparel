@@ -1,0 +1,86 @@
+@use "../abstract/" as *;
+
+.newsletter {
+  position: relative;
+  grid-area: form;
+  margin-inline: 1.75rem;
+  padding-block-end: toRem(92);
+
+  &::after {
+    content: "";
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    inset-inline-end: 4.7rem;
+    inset-block-start: 0.85rem;
+    position: absolute;
+    background-image: url("../images/icon-error.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
+
+  &.error::after,
+  &.error > &__error-message {
+    opacity: 1;
+  }
+
+  &.error > &__email {
+    border-color: $clr-primary-200;
+  }
+
+  &__email {
+    box-sizing: border-box;
+    inline-size: 100%;
+    padding-block: 0.9rem;
+    padding-inline-start: 2rem;
+    color: $clr-neutral-100;
+    border-radius: 2rem;
+    border: 1px solid $clr-primary-100;
+    background-color: transparent;
+    font-weight: 600;
+    transition: background-color 0.2s linear;
+    outline-width: 1px;
+    outline-color: $clr-primary-100;
+
+    &::placeholder {
+      color: $clr-primary-100;
+    }
+  }
+
+  &__button-send {
+    position: relative;
+    inline-size: 4rem;
+    block-size: 3rem;
+    float: right;
+    inset-block-start: -2.9rem;
+    border-radius: 2rem;
+    border-width: 0;
+    background-image: $clr-gradient-200;
+    cursor: pointer;
+    outline-color: $clr-primary-100;
+
+    box-shadow: 0 0.75rem 1.5rem -0.5rem $clr-primary-100;
+
+    & > img {
+      display: block;
+      height: toRem(20);
+      object-fit: contain;
+      margin-inline: auto;
+    }
+  }
+
+  &__error-message {
+    margin-inline-start: 2.1rem;
+    margin-block-start: 1em;
+    font-size: $fs-200;
+    color: $clr-primary-100;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
+}
+
+input[type="email"]:focus-visible {
+  background-color: $clr-primary-050;
+  outline-style: solid;
+}

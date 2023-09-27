@@ -1,0 +1,50 @@
+@use "../abstract/" as *;
+
+@use "logo";
+@use "newsletter-form";
+
+.wrapper-hero-image {
+  grid-area: image;
+}
+
+.hero {
+  max-width: toRem(375);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "logo" "image" "title" "text" "form";
+  background-image: var(--bg-img-desktop, none), $clr-gradient-100;
+  background-size: contain;
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__title {
+    grid-area: title;
+    margin-inline: 3.5rem;
+    margin-block: 4rem 0;
+    line-height: 1.2;
+    letter-spacing: 0.22em;
+    text-align: center;
+    font-size: $fs-600;
+    color: $clr-neutral-100;
+
+    & .thin {
+      color: $clr-primary-100;
+      display: block;
+      font-weight: 300;
+    }
+  }
+
+  &__text {
+    grid-area: text;
+    margin-inline: 1.85rem;
+    margin-block: 0.7rem 1.75rem;
+    line-height: 1.6;
+    text-align: center;
+    color: $clr-primary-100;
+    font-size: $fs-300;
+  }
+}

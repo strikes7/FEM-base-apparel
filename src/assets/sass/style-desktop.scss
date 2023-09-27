@@ -1,0 +1,38 @@
+@use "abstract/" as *;
+
+.web-logo {
+  block-size: fit-content;
+  margin-block: toRem(62) toRem(32);
+  margin-inline-start: clamp(3.5rem, 20vw, toRem(168));
+}
+
+.hero {
+  --bg-img-desktop: url("../images/bg-pattern-desktop.svg");
+  max-height: toRem(800);
+  max-width: toRem(1440);
+  grid-template-columns: 1fr max-content;
+  grid-template-areas:
+    "logo image"
+    "title image"
+    "text image"
+    "form image";
+  &__title,
+  &__text {
+    text-align: left;
+    margin-inline: clamp(3.5rem, 20vw, toRem(168))
+      clamp(3.5rem, 16vw, toRem(220));
+  }
+
+  &__title {
+    line-height: 1.125;
+    font-size: clamp($fs-600, 5vw, $fs-700);
+  }
+
+  &__text {
+    font-size: 1rem;
+  }
+}
+
+.newsletter {
+  margin-inline: clamp(3.5rem, 20vw, toRem(168)) clamp(3.5rem, 16vw, toRem(220));
+}

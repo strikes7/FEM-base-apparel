@@ -1,0 +1,142 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+form {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.web-logo {
+  grid-area: logo;
+  inline-size: fit-content;
+  margin-inline-start: 2rem;
+  margin-block: 2rem;
+  outline-offset: 10px;
+  outline-color: hsl(0, 36%, 70%);
+}
+.web-logo__image {
+  height: 1.25rem;
+  display: block;
+}
+
+.newsletter {
+  position: relative;
+  grid-area: form;
+  margin-inline: 1.75rem;
+  padding-block-end: 5.75rem;
+}
+.newsletter::after {
+  content: "";
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  inset-inline-end: 4.7rem;
+  inset-block-start: 0.85rem;
+  position: absolute;
+  background-image: url("../images/icon-error.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.newsletter.error::after, .newsletter.error > .newsletter__error-message {
+  opacity: 1;
+}
+.newsletter.error > .newsletter__email {
+  border-color: hsl(0, 93%, 68%);
+}
+.newsletter__email {
+  box-sizing: border-box;
+  inline-size: 100%;
+  padding-block: 0.9rem;
+  padding-inline-start: 2rem;
+  color: hsl(0, 6%, 24%);
+  border-radius: 2rem;
+  border: 1px solid hsl(0, 36%, 70%);
+  background-color: transparent;
+  font-weight: 600;
+  transition: background-color 0.2s linear;
+  outline-width: 1px;
+  outline-color: hsl(0, 36%, 70%);
+}
+.newsletter__email::placeholder {
+  color: hsl(0, 36%, 70%);
+}
+.newsletter__button-send {
+  position: relative;
+  inline-size: 4rem;
+  block-size: 3rem;
+  float: right;
+  inset-block-start: -2.9rem;
+  border-radius: 2rem;
+  border-width: 0;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  cursor: pointer;
+  outline-color: hsl(0, 36%, 70%);
+  box-shadow: 0 0.75rem 1.5rem -0.5rem hsl(0, 36%, 70%);
+}
+.newsletter__button-send > img {
+  display: block;
+  height: 1.25rem;
+  object-fit: contain;
+  margin-inline: auto;
+}
+.newsletter__error-message {
+  margin-inline-start: 2.1rem;
+  margin-block-start: 1em;
+  font-size: 0.85rem;
+  color: hsl(0, 36%, 70%);
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+input[type=email]:focus-visible {
+  background-color: hsl(0, 36%, 100%);
+  outline-style: solid;
+}
+
+.wrapper-hero-image {
+  grid-area: image;
+}
+
+.hero {
+  max-width: 23.4375rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "logo" "image" "title" "text" "form";
+  background-image: var(--bg-img-desktop, none), linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  background-size: contain;
+}
+.hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.hero__title {
+  grid-area: title;
+  margin-inline: 3.5rem;
+  margin-block: 4rem 0;
+  line-height: 1.2;
+  letter-spacing: 0.22em;
+  text-align: center;
+  font-size: 2rem;
+  color: hsl(0, 6%, 24%);
+}
+.hero__title .thin {
+  color: hsl(0, 36%, 70%);
+  display: block;
+  font-weight: 300;
+}
+.hero__text {
+  grid-area: text;
+  margin-inline: 1.85rem;
+  margin-block: 0.7rem 1.75rem;
+  line-height: 1.6;
+  text-align: center;
+  color: hsl(0, 36%, 70%);
+  font-size: 0.95rem;
+}
